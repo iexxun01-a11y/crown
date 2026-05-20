@@ -4015,6 +4015,146 @@ img.is-broken {
     linear-gradient(90deg, transparent 31%, rgba(7, 17, 31, 0.9) 31% 35%, transparent 35% 65%, rgba(7, 17, 31, 0.9) 65% 69%, transparent 69%),
     linear-gradient(180deg, #f6d78c 0 32%, #fff5ca 32% 36%, #b8955b 36% 68%, #fff5ca 68% 72%, #f6d78c 72%);
 }
+
+/* Dedicated mobile full-bleed home hero */
+@media (max-width: 768px) {
+  .home-hero-fullbleed {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100vw !important;
+    max-width: none !important;
+    height: clamp(560px, 72svh, 660px) !important;
+    min-height: 560px !important;
+    max-height: 660px !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    transform: none !important;
+  }
+
+  .home-hero-fullbleed .container,
+  .home-hero-fullbleed .hero-inner,
+  .home-hero-fullbleed .hero-slider,
+  .home-hero-fullbleed .hero-track,
+  .home-hero-fullbleed .hero-slide,
+  .home-hero-fullbleed .hero-media,
+  .home-hero-fullbleed .hero-visual,
+  .home-hero-fullbleed .hero-background {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .home-hero-fullbleed .hero-slider,
+  .home-hero-fullbleed .hero-track,
+  .home-hero-fullbleed .hero-slide,
+  .home-hero-fullbleed .hero-media,
+  .home-hero-fullbleed .hero-visual,
+  .home-hero-fullbleed .hero-background {
+    position: absolute !important;
+    inset: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    transform: none !important;
+    overflow: hidden !important;
+  }
+
+  .home-hero-fullbleed .hero-slide {
+    opacity: 0;
+    transition: opacity 760ms ease !important;
+  }
+
+  .home-hero-fullbleed .hero-slide.is-active {
+    opacity: 1;
+  }
+
+  .home-hero-fullbleed img,
+  .home-hero-fullbleed picture,
+  .home-hero-fullbleed video {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    border-radius: 0 !important;
+  }
+
+  .home-hero-fullbleed [style*="background-image"] {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .home-hero-fullbleed .hero-content,
+  .home-hero-fullbleed .hero-copy,
+  .home-hero-fullbleed .hero-text {
+    position: relative !important;
+    z-index: 3 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 54px 24px 120px !important;
+  }
+
+  .home-hero-fullbleed h1 {
+    max-width: 8.6em !important;
+    font-size: clamp(34px, 8.6vw, 46px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .home-hero-fullbleed p {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+
+  .home-hero-fullbleed .hero-actions,
+  .home-hero-fullbleed .hero-buttons,
+  .home-hero-fullbleed .hero-cta {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .home-hero-fullbleed .hero-actions a,
+  .home-hero-fullbleed .hero-buttons a,
+  .home-hero-fullbleed .hero-cta a {
+    height: 48px !important;
+    min-height: 48px !important;
+    padding: 0 12px !important;
+    font-size: 14px !important;
+    white-space: nowrap !important;
+  }
+
+  .home-hero-fullbleed .hero-controls {
+    bottom: 26px !important;
+    left: 24px !important;
+    z-index: 4 !important;
+  }
+
+  .sub-hero-content h1 {
+    font-size: clamp(30px, 7.8vw, 40px) !important;
+  }
+}
 .beginner-game-list .game-icon-baccarat::before,
 .beginner-game-list .game-icon-blackjack::before {
   content: "";
@@ -5567,5 +5707,146 @@ img.is-broken {
   body[data-page="hoiana"] .visit-flow-balanced .timeline-cards {
     margin-right: 0 !important;
     margin-left: 0 !important;
+  }
+}
+
+/* Dedicated mobile full-bleed home hero - final override */
+@media (max-width: 768px) {
+  .home-hero-fullbleed {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    width: 100vw !important;
+    max-width: none !important;
+    height: clamp(560px, 72svh, 660px) !important;
+    min-height: 560px !important;
+    max-height: 660px !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    transform: none !important;
+  }
+
+  .home-hero-fullbleed .container,
+  .home-hero-fullbleed .hero-inner,
+  .home-hero-fullbleed .hero-slider,
+  .home-hero-fullbleed .hero-track,
+  .home-hero-fullbleed .hero-slide,
+  .home-hero-fullbleed .hero-media,
+  .home-hero-fullbleed .hero-visual,
+  .home-hero-fullbleed .hero-background {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  .home-hero-fullbleed .hero-slider,
+  .home-hero-fullbleed .hero-track,
+  .home-hero-fullbleed .hero-slide,
+  .home-hero-fullbleed .hero-media,
+  .home-hero-fullbleed .hero-visual,
+  .home-hero-fullbleed .hero-background {
+    position: absolute !important;
+    inset: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    transform: none !important;
+    overflow: hidden !important;
+  }
+
+  .home-hero-fullbleed .hero-slide {
+    opacity: 0;
+    transition: opacity 760ms ease !important;
+  }
+
+  .home-hero-fullbleed .hero-slide.is-active {
+    opacity: 1;
+  }
+
+  .home-hero-fullbleed img,
+  .home-hero-fullbleed picture,
+  .home-hero-fullbleed video {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    border-radius: 0 !important;
+  }
+
+  .home-hero-fullbleed [style*="background-image"] {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .home-hero-fullbleed .hero-content,
+  .home-hero-fullbleed .hero-copy,
+  .home-hero-fullbleed .hero-text {
+    position: relative !important;
+    z-index: 3 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 54px 24px 120px !important;
+  }
+
+  .home-hero-fullbleed h1 {
+    max-width: 8.6em !important;
+    font-size: clamp(34px, 8.6vw, 46px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .home-hero-fullbleed p {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+
+  .home-hero-fullbleed .hero-actions,
+  .home-hero-fullbleed .hero-buttons,
+  .home-hero-fullbleed .hero-cta {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .home-hero-fullbleed .hero-actions a,
+  .home-hero-fullbleed .hero-buttons a,
+  .home-hero-fullbleed .hero-cta a {
+    height: 48px !important;
+    min-height: 48px !important;
+    padding: 0 12px !important;
+    font-size: 14px !important;
+    white-space: nowrap !important;
+  }
+
+  .home-hero-fullbleed .hero-controls {
+    bottom: 26px !important;
+    left: 24px !important;
+    z-index: 4 !important;
+  }
+
+  .sub-hero-content h1 {
+    font-size: clamp(30px, 7.8vw, 40px) !important;
   }
 }

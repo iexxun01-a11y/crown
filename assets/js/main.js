@@ -56,7 +56,7 @@
 
   const startSlider = () => {
     if (slides.length < 2) return;
-    const interval = window.matchMedia("(max-width: 768px)").matches ? 4400 : 5200;
+    const interval = window.matchMedia("(max-width: 768px)").matches ? 3800 : 5200;
     slideTimer = window.setInterval(() => showSlide(currentSlide + 1), interval);
   };
 

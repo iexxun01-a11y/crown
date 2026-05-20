@@ -4009,10 +4009,25 @@ img.is-broken {
   font-weight: 900;
 }
 
-.beginner-game-list .game-icon-slot::before { content: "777"; font-size: 10px; }
-.beginner-game-list .game-icon-baccarat::before { content: "A"; }
-.beginner-game-list .game-icon-roulette::before { content: "O"; }
-.beginner-game-list .game-icon-blackjack::before { content: "21"; font-size: 12px; }
+.beginner-game-list .game-icon-slot::before {
+  content: "";
+  background:
+    linear-gradient(90deg, transparent 31%, rgba(7, 17, 31, 0.9) 31% 35%, transparent 35% 65%, rgba(7, 17, 31, 0.9) 65% 69%, transparent 69%),
+    linear-gradient(180deg, #f6d78c 0 32%, #fff5ca 32% 36%, #b8955b 36% 68%, #fff5ca 68% 72%, #f6d78c 72%);
+}
+.beginner-game-list .game-icon-baccarat::before,
+.beginner-game-list .game-icon-blackjack::before {
+  content: "";
+  background:
+    linear-gradient(135deg, transparent 43%, rgba(184, 149, 91, 0.9) 43% 57%, transparent 57%),
+    linear-gradient(135deg, #f8f1df 0 48%, #d3b06a 48% 52%, #f8f1df 52%);
+}
+.beginner-game-list .game-icon-roulette::before {
+  content: "";
+  background:
+    radial-gradient(circle, #07111f 0 16%, #f4d28a 17% 22%, transparent 23%),
+    conic-gradient(from 12deg, #b8955b 0 12.5%, #14233b 12.5% 25%, #b8955b 25% 37.5%, #14233b 37.5% 50%, #b8955b 50% 62.5%, #14233b 62.5% 75%, #b8955b 75% 87.5%, #14233b 87.5% 100%);
+}
 
 .benefit-card-grid {
   display: grid;
@@ -4084,7 +4099,7 @@ img.is-broken {
   }
 
   .square-marquee-track {
-    animation-duration: 72s !important;
+    animation-duration: 150s !important;
   }
 
   .beginner-game-list {
@@ -4279,5 +4294,138 @@ img.is-broken {
     font-weight: 800;
     min-width: 0;
     padding: 0;
+  }
+}
+
+/* 4th mobile micro-adjustments */
+.square-marquee-track {
+  animation-duration: 120s;
+}
+
+@media (max-width: 768px) {
+  body[data-page="hoiana"] .hoiana-mood-slider,
+  body[data-page="hoiana"] .cinematic-grid.hoiana-mood-slider {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 12px !important;
+    overflow-x: auto !important;
+    padding: 2px 2px 12px !important;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  body[data-page="hoiana"] .hoiana-mood-slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  body[data-page="hoiana"] .hoiana-mood-slider figure,
+  body[data-page="hoiana"] .hoiana-mood-slider figure:first-child {
+    flex: 0 0 78% !important;
+    min-height: 0 !important;
+    aspect-ratio: auto !important;
+    height: 214px !important;
+    scroll-snap-align: start;
+  }
+
+  body[data-page="hoiana"] .hoiana-mood-slider img {
+    height: 100% !important;
+    object-fit: cover;
+  }
+
+  body[data-page="hoiana"] .hoiana-mood-slider figcaption {
+    right: 14px !important;
+    bottom: 14px !important;
+    left: 14px !important;
+    width: auto !important;
+    padding: 8px 10px !important;
+    font-size: 13px !important;
+    text-align: left;
+  }
+
+  .beginner-game-list article::before {
+    border-color: rgba(244, 210, 138, 0.56) !important;
+    box-shadow: inset 0 0 0 3px rgba(7, 17, 31, 0.68), 0 8px 18px rgba(0, 0, 0, 0.22);
+  }
+
+  .stat-row {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .stat-row span {
+    min-height: 78px !important;
+    margin: 0 !important;
+    padding: 13px 12px !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    text-align: left !important;
+    line-height: 1.35 !important;
+  }
+
+  .stat-row strong {
+    display: block !important;
+    margin: 0 0 4px !important;
+    font-size: 18px !important;
+    line-height: 1 !important;
+  }
+
+  .mobility-summary-grid {
+    width: min(100%, 560px) !important;
+    margin-inline: auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    justify-content: center !important;
+    gap: 12px !important;
+  }
+
+  .mobility-summary-grid article {
+    min-height: 132px !important;
+    padding: 15px !important;
+    text-align: left !important;
+  }
+
+  .mobility-summary-grid span {
+    font-size: 11px !important;
+  }
+
+  .mobility-summary-grid h3 {
+    font-size: 16px !important;
+    line-height: 1.3 !important;
+  }
+
+  .mobility-summary-grid p {
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+  }
+
+  .square-marquee-track {
+    animation-duration: 180s !important;
+  }
+
+  .review-card,
+  .review-grid.compact .review-card {
+    flex-basis: 76% !important;
+    min-height: 0 !important;
+    padding: 16px !important;
+  }
+
+  .review-card span {
+    margin-bottom: 8px !important;
+    font-size: 11px !important;
+  }
+
+  .review-card p {
+    margin-bottom: 12px !important;
+    font-size: 13px !important;
+    line-height: 1.48 !important;
+  }
+
+  .review-card strong {
+    font-size: 13px !important;
+  }
+
+  .review-card small {
+    font-size: 11px !important;
   }
 }

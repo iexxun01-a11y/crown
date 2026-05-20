@@ -133,6 +133,49 @@
     railNext?.addEventListener("click", () => scrollRail(1));
   }
 
+  const setupMobileDots = (selector) => {
+    document.querySelectorAll(selector).forEach((track) => {
+      const cards = Array.from(track.children).filter((child) => child.nodeType === 1);
+      if (cards.length < 2 || track.nextElementSibling?.classList.contains("mobile-carousel-dots")) return;
+
+      const dots = document.createElement("div");
+      dots.className = "mobile-carousel-dots";
+      cards.forEach((_, index) => {
+        const dot = document.createElement("span");
+        if (index === 0) dot.classList.add("is-active");
+        dot.addEventListener("click", () => {
+          cards[index].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
+        });
+        dots.appendChild(dot);
+      });
+      track.insertAdjacentElement("afterend", dots);
+
+      const updateDots = () => {
+        if (!window.matchMedia("(max-width: 768px)").matches) return;
+        const trackLeft = track.getBoundingClientRect().left;
+        let active = 0;
+        let minDistance = Infinity;
+        cards.forEach((card, index) => {
+          const distance = Math.abs(card.getBoundingClientRect().left - trackLeft);
+          if (distance < minDistance) {
+            minDistance = distance;
+            active = index;
+          }
+        });
+        Array.from(dots.children).forEach((dot, index) => dot.classList.toggle("is-active", index === active));
+      };
+
+      track.addEventListener("scroll", updateDots, { passive: true });
+      window.addEventListener("resize", updateDots);
+      updateDots();
+    });
+  };
+
+  setupMobileDots(".service-directory");
+  setupMobileDots(".city-best-grid");
+  setupMobileDots(".city-route-panels");
+  setupMobileDots(".mobility-service-grid");
+
   const popup = document.querySelector("[data-event-popup]");
   const closePopup = document.querySelector("[data-popup-close]");
   const hideDayButton = document.querySelector("[data-popup-hide-day]");

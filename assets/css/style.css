@@ -415,41 +415,6 @@ h3 {
 .section-heading.align-left h2 {
   color: var(--color-white);
 }
-/* 가장 인기 있는 게임 섹션 */
-.game-card-grid {
-  display: grid;
-  gap: 18px;
-}
-
-.game-card-grid article {
-  padding: 18px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.game-card-grid article span {
-  display: block;
-  color: rgba(217, 166, 87, 0.78);
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 6px;
-  opacity: 1;
-}
-
-.game-card-grid article h3 {
-  color: #eaf0f5;
-  font-size: 20px;
-  font-weight: 700;
-  margin: 0 0 8px;
-  opacity: 1;
-}
-
-.game-card-grid article p {
-  color: rgba(234, 240, 245, 0.75);
-  font-size: 14px;
-  line-height: 1.7;
-  margin: 0;
-  opacity: 1;
-}
 
 .casino-grid {
   display: grid;
@@ -790,10 +755,11 @@ h3 {
   inset: 0;
   z-index: 80;
   display: none;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding: 24px 72px 48px 24px;
-  background: rgba(9, 18, 30, 0.38);
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(9, 18, 30, 0.54);
+  backdrop-filter: blur(8px);
 }
 
 .event-popup.is-visible {
@@ -1663,6 +1629,620 @@ h3 {
   }
 }
 
+/* Final mobile safeguards for premium UX */
+@media (max-width: 768px) {
+  .service-directory,
+  .city-best-grid,
+  .city-route-panels,
+  .mobility-service-grid {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 2px 14px 8px;
+    margin-inline: -14px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .service-group,
+  .city-best-card,
+  .city-best-card.featured,
+  .city-best-card:not(.featured),
+  .city-route-panels article,
+  .mobility-service-grid article {
+    flex: 0 0 82%;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    scroll-snap-align: start;
+  }
+
+  .floating-contact {
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 12px !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    z-index: 90;
+  }
+
+  .floating-contact a {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    border-radius: 10px;
+  }
+
+  .game-card-grid.compact-mobile {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .cinematic-grid.balanced,
+  .cinematic-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .cinematic-grid.balanced figure,
+  .cinematic-grid figure,
+  .cinematic-grid.balanced figure:first-child,
+  .cinematic-grid figure:first-child {
+    flex: 0 0 78%;
+    min-height: 230px;
+    scroll-snap-align: start;
+  }
+
+  .editorial-copy p:not(.eyebrow),
+  .info-table-layout p,
+  .section-heading p:not(.eyebrow),
+  .game-card-grid p,
+  .beginner-game-list p,
+  .comparison-table,
+  .city-route-panels p,
+  .mobility-service-grid p,
+  .service-flow-list p {
+    color: rgba(255, 255, 255, 0.78);
+  }
+}
+
+/* UX refinement overrides */
+.editorial-copy p:not(.eyebrow),
+.info-table-layout p,
+.section-heading p:not(.eyebrow),
+.casino-guide-section p,
+.comparison-section p,
+.beginner-section p,
+.resort-route-section p,
+.mobility-service-section p,
+.service-flow-list p,
+.city-route-panels p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.review-card p,
+.casino-card p,
+.service-card p {
+  color: #485565;
+}
+
+.casino-guide-section,
+.beginner-section,
+.comparison-section,
+.resort-route-section,
+.mobility-service-section {
+  background:
+    radial-gradient(circle at 84% 8%, rgba(184, 149, 91, 0.12), transparent 28%),
+    linear-gradient(180deg, var(--color-page), var(--color-panel-dark));
+}
+
+.game-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.game-card-grid article {
+  overflow: hidden;
+  min-height: 0;
+  padding: 0;
+  border: 1px solid rgba(229, 225, 216, 0.14);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.16);
+}
+
+.game-card-grid img {
+  height: 170px;
+  object-fit: cover;
+  filter: brightness(0.82) saturate(0.96);
+}
+
+.game-card-grid span,
+.beginner-game-list span,
+.service-flow-list span,
+.mobility-service-grid span {
+  display: block;
+  margin: 22px 22px 8px;
+  color: var(--color-gold);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.game-card-grid h3,
+.beginner-game-list h3,
+.service-flow-list h3,
+.mobility-service-grid h3 {
+  margin: 0 22px 8px;
+  color: var(--color-white);
+}
+
+.game-card-grid p,
+.beginner-game-list p,
+.service-flow-list p,
+.mobility-service-grid p {
+  margin: 0 22px 24px;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.beginner-game-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.beginner-game-list article,
+.service-flow-list article {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(229, 225, 216, 0.14);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.beginner-game-list article::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(184, 149, 91, 0.42);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184, 149, 91, 0.34), rgba(184, 149, 91, 0.04));
+}
+
+.comparison-table {
+  overflow: hidden;
+  border: 1px solid rgba(229, 225, 216, 0.16);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 0.9fr 0.7fr 1fr 1.4fr;
+  gap: 16px;
+  padding: 18px 22px;
+  border-bottom: 1px solid rgba(229, 225, 216, 0.1);
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.table-row:last-child {
+  border-bottom: 0;
+}
+
+.table-row span:first-child {
+  color: var(--color-white);
+  font-weight: 900;
+}
+
+.table-head {
+  color: var(--color-gold);
+  background: rgba(184, 149, 91, 0.14);
+  font-weight: 900;
+}
+
+.table-head span:first-child {
+  color: var(--color-gold);
+}
+
+.cinematic-grid.balanced {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cinematic-grid.balanced figure,
+.cinematic-grid.balanced figure:first-child {
+  min-height: 360px;
+}
+
+.mobility-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.mobility-service-grid article {
+  overflow: hidden;
+  border: 1px solid rgba(229, 225, 216, 0.14);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.16);
+}
+
+.mobility-service-grid img {
+  height: 230px;
+  object-fit: cover;
+}
+
+.mobility-service-grid small {
+  display: block;
+  margin: -8px 22px 24px;
+  color: rgba(255, 255, 255, 0.58);
+  font-weight: 700;
+}
+
+.service-flow-list {
+  display: grid;
+  gap: 14px;
+}
+
+.mobile-carousel-dots {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-space: 58px;
+  }
+
+  body {
+    padding-bottom: 86px;
+  }
+
+  .container {
+    width: min(calc(100% - 28px), var(--container));
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 26px;
+    line-height: 1.22;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .section-heading {
+    margin-bottom: 24px;
+  }
+
+  .sub-hero,
+  .hero {
+    min-height: 540px;
+  }
+
+  .sub-hero-content,
+  .hero-content {
+    padding-bottom: 64px;
+  }
+
+  .sub-hero-content p,
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .editorial-split,
+  .info-table-layout,
+  .split-layout {
+    gap: 26px;
+  }
+
+  .editorial-image img,
+  .visit-flow-balanced .editorial-image img {
+    height: 240px;
+  }
+
+  .stat-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .stat-row span {
+    padding: 12px 10px;
+    font-size: 12px;
+  }
+
+  .stat-row strong {
+    font-size: 17px;
+  }
+
+  .game-card-grid.compact-mobile {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .game-card-grid img {
+    height: 92px !important;
+  }
+
+  .game-card-grid span,
+  .game-card-grid h3,
+  .game-card-grid p {
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+  }
+
+  .game-card-grid span {
+    margin-top: 12px !important;
+    margin-bottom: 4px !important;
+    font-size: 10px;
+  }
+
+  .game-card-grid h3 {
+    margin-bottom: 4px !important;
+    font-size: 15px;
+  }
+
+  .game-card-grid p {
+    margin-bottom: 14px !important;
+    font-size: 12px;
+    line-height: 1.45;
+  }
+
+  .beginner-game-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .beginner-game-list article {
+    min-height: 92px;
+    padding-right: 46px;
+  }
+
+  .beginner-game-list span,
+  .beginner-game-list h3,
+  .beginner-game-list p {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .beginner-game-list span {
+    margin-top: 14px;
+    margin-bottom: 3px;
+  }
+
+  .beginner-game-list p {
+    margin-bottom: 14px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .comparison-table {
+    border-radius: var(--radius-sm);
+  }
+
+  .table-row {
+    grid-template-columns: 0.85fr 0.7fr 1fr;
+    gap: 6px 10px;
+    padding: 14px;
+    font-size: 13px;
+  }
+
+  .table-row span:last-child {
+    grid-column: 1 / -1;
+    color: rgba(255, 255, 255, 0.72);
+  }
+
+  .cinematic-grid.balanced,
+  .cinematic-grid {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 4px;
+  }
+
+  .cinematic-grid.balanced figure,
+  .cinematic-grid.balanced figure:first-child,
+  .cinematic-grid figure,
+  .cinematic-grid figure:first-child {
+    flex: 0 0 78%;
+    min-height: 230px;
+    scroll-snap-align: start;
+  }
+
+  .cinematic-grid figcaption {
+    left: 12px;
+    bottom: 12px;
+    font-size: 13px;
+  }
+
+  .service-directory,
+  .city-best-grid,
+  .city-route-panels,
+  .mobility-service-grid {
+    display: flex;
+    grid-template-columns: none;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 2px 14px 8px;
+    margin-inline: -14px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .service-directory::-webkit-scrollbar,
+  .city-best-grid::-webkit-scrollbar,
+  .city-route-panels::-webkit-scrollbar,
+  .mobility-service-grid::-webkit-scrollbar,
+  .cinematic-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .service-group,
+  .city-best-card,
+  .city-route-panels article,
+  .mobility-service-grid article {
+    flex: 0 0 82%;
+    scroll-snap-align: start;
+  }
+
+  .service-group {
+    padding: 22px;
+  }
+
+  .service-group a {
+    min-height: 66px;
+  }
+
+  .city-best-card,
+  .city-best-card.featured,
+  .city-best-card:not(.featured) {
+    min-height: 320px;
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .city-route-panels article,
+  .city-route-panels article:nth-child(even) {
+    display: block;
+    padding: 0;
+  }
+
+  .city-route-panels article:nth-child(even) img {
+    order: 0;
+  }
+
+  .city-route-panels img,
+  .mobility-service-grid img {
+    height: 150px;
+    border-radius: 0;
+  }
+
+  .city-route-panels div {
+    padding: 18px;
+  }
+
+  .mobile-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin: 12px 0 0;
+  }
+
+  .mobile-carousel-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.28);
+    transition: width 180ms ease, background 180ms ease;
+  }
+
+  .mobile-carousel-dots span.is-active {
+    width: 18px;
+    background: var(--color-gold);
+  }
+
+  .premium-info-grid,
+  .review-grid,
+  .review-grid.compact,
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-contact {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    grid-template-columns: 1fr 1fr;
+    z-index: 90;
+  }
+
+  .floating-contact a {
+    min-width: 0;
+    width: 100%;
+    min-height: 44px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .service-group,
+  .city-best-card,
+  .city-route-panels article,
+  .mobility-service-grid article {
+    flex-basis: 86%;
+  }
+
+  .game-card-grid.compact-mobile {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .game-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .city-best-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+  }
+
+  .city-best-card.featured,
+  .city-best-card:not(.featured) {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 560px) {
+  .game-card-grid,
+  .table-row {
+    grid-template-columns: 1fr;
+  }
+
+  .table-row {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .game-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .city-best-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: auto;
+  }
+
+  .city-best-card.featured,
+  .city-best-card:not(.featured) {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 560px) {
+  .game-card-grid,
+  .table-row {
+    grid-template-columns: 1fr;
+  }
+
+  .table-row {
+    gap: 5px;
+  }
+}
+
 .review-card small {
   display: block;
   margin-top: 4px;
@@ -1988,13 +2568,14 @@ h3 {
 
 .city-best-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-auto-rows: 235px;
   gap: 18px;
 }
 
 .city-best-card {
   position: relative;
-  min-height: 390px;
+  min-height: 0;
   overflow: hidden;
   border: 1px solid rgba(229, 225, 216, 0.14);
   border-radius: var(--radius-md);
@@ -2004,7 +2585,12 @@ h3 {
 }
 
 .city-best-card.featured {
-  grid-column: span 2;
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+.city-best-card:not(.featured) {
+  grid-column: span 3;
 }
 
 .city-best-card::after {
@@ -2204,6 +2790,96 @@ h3 {
 .guide-board .warning {
   border-color: rgba(184, 149, 91, 0.36);
   background: rgba(184, 149, 91, 0.08);
+}
+
+.casino-guide-section,
+.comparison-section {
+  background:
+    radial-gradient(circle at 84% 8%, rgba(184, 149, 91, 0.12), transparent 28%),
+    var(--color-page);
+}
+
+.game-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.game-card-grid article {
+  overflow: hidden;
+  min-height: 0;
+  padding: 0;
+  border: 1px solid rgba(229, 225, 216, 0.14);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.16);
+}
+
+.game-card-grid img {
+  height: 170px;
+  object-fit: cover;
+  filter: brightness(0.82) saturate(0.96);
+}
+
+.game-card-grid span {
+  display: block;
+  margin: 22px 22px 8px;
+  color: var(--color-gold);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.game-card-grid h3 {
+  margin: 0 22px 8px;
+  color: var(--color-white);
+}
+
+.game-card-grid p {
+  margin: 0 22px 24px;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.comparison-table {
+  overflow: hidden;
+  border: 1px solid rgba(229, 225, 216, 0.14);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 0.9fr 0.7fr 1fr 1.4fr;
+  gap: 16px;
+  padding: 18px 22px;
+  border-bottom: 1px solid rgba(229, 225, 216, 0.1);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.table-row:last-child {
+  border-bottom: 0;
+}
+
+.table-row span:first-child {
+  color: var(--color-white);
+  font-weight: 900;
+}
+
+.table-head {
+  color: var(--color-gold);
+  background: rgba(184, 149, 91, 0.12);
+  font-weight: 900;
+}
+
+.table-head span:first-child {
+  color: var(--color-gold);
+}
+
+.visit-flow-balanced {
+  align-items: center;
+}
+
+.visit-flow-balanced .editorial-image img {
+  height: 500px;
 }
 
 .reveal-on-scroll {

@@ -229,9 +229,9 @@
 
   const visitorNodes = document.querySelectorAll("[data-visitor-count]");
   if (visitorNodes.length) {
-    // 議고쉶???쒖옉媛??섏젙 ?꾩튂
+    // Estimated starting value for the visitor counter.
     const baseVisitors = 18420;
-    // ?섎（ 利앷? ?⑥쐞 ?섏젙 ?꾩튂
+    // Estimated daily increment for the visitor counter.
     const visitorsPerDay = 100;
     const baseDate = new Date("2026-05-01T00:00:00+09:00");
     const today = new Date();
@@ -296,10 +296,52 @@
     quickNav.setAttribute("aria-label", "모바일 빠른 메뉴");
     quickNav.innerHTML = `
       <a href="/crown/index.html"><span>홈</span></a>
-      <a href="/crown/hoiana.html"><span>카지노</span></a>
+      <button type="button" data-casino-sheet-open><span>카지노</span></button>
       <a href="/crown/services/index.html"><span>서비스</span></a>
       <a href="#contact"><span>문의</span></a>
     `;
     document.body.appendChild(quickNav);
   }
+
+  if (!document.querySelector(".casino-choice-sheet")) {
+    const sheet = document.createElement("div");
+    sheet.className = "casino-choice-sheet";
+    sheet.setAttribute("aria-hidden", "true");
+    sheet.innerHTML = `
+      <div class="casino-sheet-backdrop" data-casino-sheet-close></div>
+      <div class="casino-sheet-panel" role="dialog" aria-modal="true" aria-label="카지노 선택">
+        <button class="casino-sheet-close" type="button" aria-label="닫기" data-casino-sheet-close>×</button>
+        <p>Casino Route</p>
+        <h2>방문할 카지노를 선택하세요</h2>
+        <a href="/crown/crown.html"><strong>크라운 카지노</strong><span>시내 일정과 가볍게 연결</span></a>
+        <a href="/crown/hoiana.html"><strong>호이아나 카지노</strong><span>리조트·골프·VIP 동선 추천</span></a>
+      </div>
+    `;
+    document.body.appendChild(sheet);
+
+    const setSheet = (open) => {
+      sheet.classList.toggle("is-open", open);
+      sheet.setAttribute("aria-hidden", String(!open));
+      document.body.classList.toggle("casino-sheet-open", open);
+    };
+
+    document.addEventListener("click", (event) => {
+      if (event.target.closest("[data-casino-sheet-open]")) setSheet(true);
+      if (event.target.closest("[data-casino-sheet-close]")) setSheet(false);
+      if (event.target.closest(".casino-choice-sheet a")) setSheet(false);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setSheet(false);
+    });
+  }
+
+  document.querySelectorAll(".square-marquee-track").forEach((track) => {
+    if (track.dataset.repeatReady === "true") return;
+    const items = Array.from(track.children);
+    for (let i = 0; i < 4; i += 1) {
+      items.forEach((item) => track.appendChild(item.cloneNode(true)));
+    }
+    track.dataset.repeatReady = "true";
+  });
 })();

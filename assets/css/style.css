@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --color-ink: #17202b;
   --color-navy: #0d1a2a;
   --color-charcoal: #27313b;
@@ -1079,7 +1079,7 @@ h3 {
 }
 
 .faq-item.is-open button::after {
-  content: "−";
+  content: "-";
 }
 
 .faq-answer {
@@ -2800,7 +2800,7 @@ img.is-broken {
 }
 
 .service-group a::after {
-  content: "›";
+  content: ">";
   position: absolute;
   right: 2px;
   top: 50%;
@@ -3893,5 +3893,391 @@ img.is-broken {
   .casino-card p,
   .compact-mobility-grid p {
     font-size: 11px;
+  }
+}
+
+/* 3rd mobile detail patch */
+.mobile-quick-nav button {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.casino-choice-sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+}
+
+.casino-choice-sheet.is-open {
+  display: block;
+}
+
+.casino-sheet-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.52);
+}
+
+.casino-sheet-panel {
+  position: absolute;
+  left: 50%;
+  bottom: calc(108px + env(safe-area-inset-bottom));
+  width: min(calc(100% - 36px), 380px);
+  padding: 18px;
+  border: 1px solid rgba(184, 149, 91, 0.45);
+  border-radius: 18px;
+  background: linear-gradient(180deg, #101a2c, #07111f);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.42);
+  transform: translateX(-50%);
+}
+
+.casino-sheet-panel p {
+  margin: 0 0 6px;
+  color: var(--color-gold);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.casino-sheet-panel h2 {
+  margin: 0 34px 14px 0;
+  color: var(--color-white);
+  font-size: 20px;
+}
+
+.casino-sheet-panel a {
+  display: block;
+  padding: 14px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.casino-sheet-panel a + a {
+  margin-top: 10px;
+}
+
+.casino-sheet-panel strong,
+.casino-sheet-panel span {
+  display: block;
+}
+
+.casino-sheet-panel strong {
+  color: var(--color-white);
+  font-size: 15px;
+}
+
+.casino-sheet-panel span {
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 12px;
+}
+
+.casino-sheet-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.beginner-section .section-heading h2,
+.beginner-section h2,
+.beginner-game-list h3 {
+  color: var(--color-white);
+  opacity: 1;
+}
+
+.beginner-game-list article::before {
+  display: grid;
+  place-items: center;
+  color: #f7d99a;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.beginner-game-list .game-icon-slot::before { content: "777"; font-size: 10px; }
+.beginner-game-list .game-icon-baccarat::before { content: "A"; }
+.beginner-game-list .game-icon-roulette::before { content: "O"; }
+.beginner-game-list .game-icon-blackjack::before { content: "21"; font-size: 12px; }
+
+.benefit-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.benefit-card-grid article {
+  padding: 20px;
+  border: 1px solid rgba(229, 225, 216, 0.14);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.052);
+}
+
+.benefit-card-grid span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-gold);
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.benefit-card-grid h3 {
+  margin: 0 0 8px;
+  color: var(--color-white);
+}
+
+.benefit-card-grid p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.nightlife-menu-grid img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 14px 14px 0 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    border-top: 1px solid rgba(184, 149, 91, 0.13);
+  }
+
+  .eyebrow,
+  .section-heading .eyebrow,
+  .editorial-copy .eyebrow,
+  .info-table-layout .eyebrow {
+    color: #f4d28a !important;
+    opacity: 1 !important;
+  }
+
+  .section-heading h2,
+  .editorial-copy h2,
+  .info-table-layout h2,
+  .beginner-section h2 {
+    color: var(--color-white) !important;
+    opacity: 1 !important;
+  }
+
+  .connected-stay {
+    min-height: 520px !important;
+    padding-block: 74px !important;
+  }
+
+  .visual-break-content {
+    padding-block: 18px !important;
+  }
+
+  .square-marquee-track {
+    animation-duration: 72s !important;
+  }
+
+  .beginner-game-list {
+    gap: 10px !important;
+  }
+
+  .beginner-game-list article {
+    min-height: 132px !important;
+    padding-right: 46px !important;
+  }
+
+  .beginner-game-list article::before {
+    top: 15px !important;
+    right: 14px !important;
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .beginner-game-list span {
+    margin: 15px 14px 6px !important;
+    font-size: 10px !important;
+  }
+
+  .beginner-game-list h3 {
+    margin: 0 14px 6px !important;
+    font-size: 17px !important;
+  }
+
+  .beginner-game-list p {
+    margin: 0 14px 16px !important;
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
+
+  .timeline.compact-timeline,
+  .timeline-cards {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    overflow: visible !important;
+  }
+
+  .timeline.compact-timeline span,
+  .timeline-cards span {
+    min-height: 44px !important;
+    padding: 11px 10px !important;
+    border-radius: 14px !important;
+    font-size: 12px !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  .golf-day-route {
+    gap: 18px !important;
+  }
+
+  .benefit-card-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .benefit-card-grid article {
+    padding: 15px !important;
+    min-height: 132px !important;
+  }
+
+  .benefit-card-grid h3 {
+    font-size: 16px !important;
+    line-height: 1.32 !important;
+  }
+
+  .benefit-card-grid p,
+  .guide-board p {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
+
+  .guide-board article {
+    padding: 15px !important;
+  }
+
+  .guide-board h3 {
+    font-size: 17px !important;
+    line-height: 1.35 !important;
+  }
+
+  .nightlife-category-section .section-heading h2 {
+    font-size: 28px !important;
+    line-height: 1.18 !important;
+  }
+
+  .nightlife-menu-grid article {
+    padding: 0 0 15px !important;
+    overflow: hidden !important;
+  }
+
+  .nightlife-menu-grid img {
+    height: 116px !important;
+  }
+
+  .nightlife-menu-grid span {
+    margin: 12px 14px 6px !important;
+    font-size: 10px !important;
+  }
+
+  .nightlife-menu-grid h3 {
+    margin: 0 14px 6px !important;
+    font-size: 17px !important;
+  }
+
+  .nightlife-menu-grid p {
+    margin: 0 14px !important;
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
+
+  .course-showcase.golf-course-strip h3,
+  .service-detail-section h3,
+  .service-flow-list h3 {
+    font-size: 17px !important;
+  }
+
+  .course-showcase.golf-course-strip p,
+  .course-showcase.golf-course-strip small,
+  .service-detail-section p,
+  .service-flow-list p {
+    font-size: 13px !important;
+    line-height: 1.45 !important;
+  }
+
+  .faq-grid,
+  .compact-faq-grid {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .faq-item {
+    border-radius: 14px !important;
+    background: rgba(255, 255, 255, 0.035) !important;
+  }
+
+  .faq-item button {
+    min-height: 0 !important;
+    padding: 14px 44px 14px 15px !important;
+    font-size: 14px !important;
+    line-height: 1.35 !important;
+  }
+
+  .faq-item button::after {
+    content: "+" !important;
+    right: 16px !important;
+    font-size: 18px !important;
+  }
+
+  .faq-item.is-open button::after {
+    content: "-" !important;
+  }
+
+  .faq-answer {
+    padding: 0 15px 15px !important;
+  }
+
+  .faq-answer p {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .footer-grid > div:nth-child(3) {
+    display: none !important;
+  }
+
+  .site-footer {
+    padding-bottom: calc(150px + env(safe-area-inset-bottom)) !important;
+  }
+
+  .mobile-quick-nav a,
+  .mobile-quick-nav button {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    border-radius: 11px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 12px;
+    font-weight: 800;
+    min-width: 0;
+    padding: 0;
   }
 }

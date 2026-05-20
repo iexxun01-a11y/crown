@@ -4552,6 +4552,11 @@ img.is-broken {
     margin-right: 0 !important;
     margin-left: 0 !important;
   }
+
+  .sub-hero-content h1 {
+    font-size: clamp(30px, 8vw, 42px) !important;
+    line-height: 1.12 !important;
+  }
 }
 
 /* 5th mobile detail patch */
@@ -5419,25 +5424,41 @@ img.is-broken {
 
 /* Final two-point mobile override */
 @media (max-width: 768px) {
+  body[data-page="home"],
+  body[data-page="home"] main {
+    width: 100% !important;
+    max-width: none !important;
+    overflow-x: hidden !important;
+  }
+
   body[data-page="home"] .hero.hero-home {
+    position: relative !important;
+    left: 50% !important;
     width: 100vw !important;
-    min-height: 560px !important;
-    height: 66svh !important;
-    max-height: 620px !important;
-    margin-right: calc(50% - 50vw) !important;
-    margin-left: calc(50% - 50vw) !important;
+    min-width: 100vw !important;
+    max-width: none !important;
+    height: clamp(560px, 72svh, 660px) !important;
+    min-height: 0 !important;
+    max-height: 660px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateX(-50%) !important;
     border-radius: 0 !important;
+    overflow: hidden !important;
   }
 
   body[data-page="home"] .hero-home .hero-slider {
     position: absolute !important;
     inset: 0 !important;
-    left: 50% !important;
-    width: 100vw !important;
-    min-width: 100vw !important;
+    left: 0 !important;
+    width: 100% !important;
+    min-width: 100% !important;
     max-width: none !important;
-    transform: translateX(-50%) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
     border-radius: 0 !important;
+    overflow: hidden !important;
   }
 
   body[data-page="home"] .hero-home .hero-slide {
@@ -5459,24 +5480,30 @@ img.is-broken {
 
   body[data-page="home"] .hero-home .hero-slide img {
     display: block !important;
-    width: 100vw !important;
-    min-width: 100vw !important;
+    width: 100% !important;
+    min-width: 100% !important;
     max-width: none !important;
     height: 100% !important;
     margin: 0 !important;
+    padding: 0 !important;
     border-radius: 0 !important;
     object-fit: cover !important;
-    object-position: center 42% !important;
+    object-position: center center !important;
   }
 
   body[data-page="home"] .hero-home .hero-content {
+    position: relative !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
     min-height: 100% !important;
-    padding: 58px 20px 70px !important;
+    padding: 54px 20px 74px !important;
   }
 
   body[data-page="home"] .hero-home h1 {
     max-width: 8.4em !important;
-    font-size: clamp(31px, 8.2vw, 38px) !important;
+    font-size: clamp(29px, 7.8vw, 36px) !important;
     line-height: 1.12 !important;
   }
 
@@ -5492,6 +5519,8 @@ img.is-broken {
 
   body[data-page="home"] .hero-home .hero-actions .button {
     min-height: 40px !important;
+    padding-right: 8px !important;
+    padding-left: 8px !important;
   }
 
   body[data-page="home"] .hero-home .hero-controls {

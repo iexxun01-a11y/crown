@@ -4591,3 +4591,254 @@ img.is-broken {
     flex-basis: 74% !important;
   }
 }
+
+/* 6th mobile visual tuning */
+@media (max-width: 768px) {
+  .hero.hero-home {
+    min-height: 690px !important;
+    overflow: hidden;
+  }
+
+  .hero-home .hero-slide img {
+    filter: saturate(1.06) contrast(1.03);
+    object-position: center top;
+  }
+
+  .hero-home .hero-overlay {
+    background:
+      linear-gradient(180deg, rgba(5, 11, 21, 0.18) 0%, rgba(5, 11, 21, 0.44) 42%, rgba(5, 11, 21, 0.78) 100%),
+      linear-gradient(90deg, rgba(5, 11, 21, 0.66) 0%, rgba(5, 11, 21, 0.2) 72%);
+  }
+
+  .hero-home .hero-content {
+    min-height: 690px !important;
+    padding: 86px 22px 84px !important;
+    justify-content: center !important;
+  }
+
+  .hero-home .hero-content .eyebrow {
+    font-size: 12px !important;
+    line-height: 1.25 !important;
+  }
+
+  .hero-home h1 {
+    max-width: 9.5em !important;
+    margin: 14px 0 18px !important;
+    font-size: clamp(38px, 10.2vw, 46px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.04em !important;
+  }
+
+  .hero-home .hero-description {
+    max-width: 96% !important;
+    font-size: 15px !important;
+    line-height: 1.65 !important;
+    color: rgba(255, 255, 255, 0.82) !important;
+  }
+
+  .hero-home .hero-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100%;
+    margin-top: 22px !important;
+  }
+
+  .hero-home .hero-actions .button {
+    min-height: 48px !important;
+    padding: 0 12px !important;
+    border-radius: 999px !important;
+    font-size: 14px !important;
+    white-space: nowrap !important;
+  }
+
+  .hero-home .hero-controls {
+    bottom: 54px !important;
+    left: 22px !important;
+    gap: 12px !important;
+  }
+
+  .hero-home .hero-controls button {
+    width: 48px !important;
+    height: 48px !important;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .connected-stay {
+    min-height: 600px !important;
+    padding-block: 66px 86px !important;
+  }
+
+  .connected-stay img {
+    filter: brightness(0.78) saturate(1.02) !important;
+  }
+
+  .connected-stay .visual-break-overlay {
+    background:
+      linear-gradient(180deg, rgba(6, 12, 22, 0.5), rgba(6, 12, 22, 0.64)),
+      linear-gradient(90deg, rgba(6, 12, 22, 0.52), rgba(6, 12, 22, 0.18));
+  }
+
+  .connected-stay .visual-break-content {
+    padding-inline: 20px !important;
+  }
+
+  .connected-stay h2 {
+    max-width: 10.5em;
+    font-size: clamp(32px, 8.4vw, 38px) !important;
+    line-height: 1.14 !important;
+    letter-spacing: -0.035em !important;
+  }
+
+  .connected-stay .visual-break-content p:not(.eyebrow) {
+    max-width: 96%;
+    font-size: 15px !important;
+    line-height: 1.62 !important;
+  }
+
+  .connected-stay .route-connector {
+    gap: 10px !important;
+    margin-top: 28px !important;
+  }
+
+  .connected-stay .route-connector span {
+    min-height: 48px !important;
+    font-size: 16px !important;
+    backdrop-filter: blur(10px);
+  }
+
+  body[data-page="hoiana"] .stat-row,
+  body[data-page="crown"] .stat-row {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 18px 0 0 !important;
+  }
+
+  body[data-page="hoiana"] .stat-row span,
+  body[data-page="crown"] .stat-row span {
+    flex: initial !important;
+    min-height: 86px !important;
+    padding: 12px 8px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    border-radius: 14px !important;
+  }
+
+  body[data-page="hoiana"] .stat-row strong,
+  body[data-page="crown"] .stat-row strong {
+    margin: 0 0 7px !important;
+    font-size: 20px !important;
+  }
+
+  body[data-page="hoiana"] .stat-row span,
+  body[data-page="crown"] .stat-row span {
+    font-size: 11px !important;
+    line-height: 1.28 !important;
+  }
+
+  .visit-flow-balanced {
+    gap: 14px !important;
+  }
+
+  .visit-flow-balanced .editorial-copy .eyebrow,
+  .visit-flow-balanced .editorial-copy h2,
+  .visit-flow-balanced .editorial-copy p:not(.eyebrow) {
+    display: block !important;
+  }
+
+  .visit-flow-balanced .editorial-image {
+    margin-top: 10px !important;
+  }
+
+  .visit-flow-balanced .editorial-image img {
+    height: 210px !important;
+    border-radius: 18px !important;
+  }
+
+  .visit-flow-balanced .timeline-cards {
+    display: none !important;
+  }
+
+  .service-route-visual {
+    gap: 14px !important;
+    padding: 6px 18px 14px !important;
+    margin-inline: -18px !important;
+    scroll-padding-left: 18px !important;
+    overflow-y: visible !important;
+  }
+
+  .service-route-visual .route-feature-card {
+    flex-basis: 82% !important;
+    transform: none !important;
+    scroll-snap-align: start;
+  }
+
+  .service-route-visual .route-feature-card:active {
+    transform: translateY(-2px) !important;
+  }
+
+  .service-route-visual .route-feature-card img {
+    height: 180px !important;
+  }
+
+  .service-route-visual .route-feature-card div {
+    padding: 18px !important;
+  }
+
+  .service-route-visual .route-feature-card h3 {
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+  }
+
+  .service-route-visual .route-feature-card p {
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+
+  .reveal-on-scroll {
+    transition: opacity 520ms ease, transform 520ms ease, border-color 220ms ease, box-shadow 220ms ease;
+  }
+
+  .hero-home h1,
+  .connected-stay h2,
+  .section-heading h2 {
+    animation: mobileSoftRise 620ms ease both;
+  }
+
+  .service-route-visual .route-feature-card,
+  .stat-row span {
+    transition: transform 220ms ease, border-color 220ms ease, background-color 220ms ease;
+  }
+
+  .service-route-visual .route-feature-card:hover,
+  .stat-row span:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes mobileSoftRise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-home h1,
+  .connected-stay h2,
+  .section-heading h2,
+  .reveal-on-scroll,
+  .service-route-visual .route-feature-card,
+  .stat-row span {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -3602,7 +3602,7 @@ img.is-broken {
 
 /* Final mobile overrides: this block intentionally sits last. */
 @media (max-width: 768px) {
-  body { padding-bottom: calc(112px + env(safe-area-inset-bottom)) !important; }
+  body { padding-bottom: calc(142px + env(safe-area-inset-bottom)) !important; }
   h1 { font-size: 32px !important; line-height: 1.12 !important; }
   h2 { font-size: 26px !important; line-height: 1.18 !important; }
   .hero, .sub-hero { min-height: 500px !important; }
@@ -3613,4 +3613,285 @@ img.is-broken {
   .review-grid, .review-grid.compact, .service-grid, .course-showcase, .city-photo-grid, .service-route-visual { display: flex !important; grid-template-columns: none !important; overflow-x: auto !important; scroll-snap-type: x mandatory; }
   .floating-contact { left: 20px !important; right: 20px !important; bottom: calc(12px + env(safe-area-inset-bottom)) !important; }
   .floating-contact a { min-height: 50px !important; }
+}
+
+/* Second mobile UX pass: compact service surfaces and premium event popup. */
+.mobile-quick-nav {
+  display: none;
+}
+
+.event-card {
+  overflow: hidden;
+}
+
+.event-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(184, 149, 91, 0.24), transparent 34%),
+    linear-gradient(135deg, #0d1a2a, #142235 62%, #0b1420);
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .section-casinos {
+    padding-top: 46px;
+    padding-bottom: 44px;
+  }
+
+  .section-casinos .section-heading {
+    margin-bottom: 14px;
+  }
+
+  .section-casinos .section-heading h2 {
+    font-size: 24px !important;
+  }
+
+  .section-casinos .section-heading p:not(.eyebrow) {
+    font-size: 13px;
+  }
+
+  .casino-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .casino-card {
+    min-width: 0;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+
+  .casino-card img {
+    height: 112px !important;
+    border-radius: 0 !important;
+  }
+
+  .casino-card-body {
+    padding: 13px !important;
+  }
+
+  .casino-card .label,
+  .casino-card p {
+    font-size: 12px;
+  }
+
+  .casino-card h3 {
+    font-size: 16px;
+    margin: 4px 0;
+  }
+
+  .casino-card .clean-list {
+    display: none;
+  }
+
+  .casino-card .text-link {
+    margin-top: 8px;
+    font-size: 12px;
+  }
+
+  .compact-mobility-grid,
+  .mobility-service-grid.compact-mobility-grid,
+  .mobility-summary-grid,
+  .compact-faq-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    overflow: visible !important;
+    margin-inline: 0 !important;
+    padding: 0 !important;
+  }
+
+  .compact-mobility-grid article,
+  .mobility-service-grid.compact-mobility-grid article {
+    display: block;
+    flex: none !important;
+    min-width: 0;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+
+  .compact-mobility-grid img {
+    height: 96px !important;
+    border-radius: 0 !important;
+  }
+
+  .compact-mobility-grid div {
+    padding: 12px;
+  }
+
+  .compact-mobility-grid h3,
+  .compact-faq-grid button {
+    font-size: 14px;
+    line-height: 1.28;
+  }
+
+  .compact-mobility-grid p,
+  .compact-mobility-grid small {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .compact-faq-grid .faq-item {
+    padding: 14px !important;
+  }
+
+  .compact-faq-grid .faq-answer p {
+    font-size: 12px;
+  }
+
+  .golf-course-strip article,
+  .course-showcase.golf-course-strip article,
+  .nightlife-menu-grid article,
+  .guide-board article,
+  .city-food-grid .city-best-card {
+    flex: 0 0 78%;
+    scroll-snap-align: start;
+  }
+
+  .golf-course-strip img,
+  .course-showcase.golf-course-strip img {
+    height: 150px !important;
+  }
+
+  .golf-course-strip span,
+  .nightlife-menu-grid span {
+    display: inline-flex;
+    width: fit-content;
+    padding: 5px 8px;
+    border-radius: 999px;
+    background: rgba(184, 149, 91, 0.14);
+    border: 1px solid rgba(184, 149, 91, 0.32);
+    font-size: 10px;
+  }
+
+  .guide-board,
+  .city-food-grid {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 2px 14px 8px !important;
+    margin-inline: -14px;
+  }
+
+  .guide-board::-webkit-scrollbar,
+  .city-food-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .guide-board article {
+    padding: 18px !important;
+  }
+
+  .exchange-tool {
+    gap: 18px;
+  }
+
+  .calculator-card {
+    padding: 18px;
+  }
+
+  .nightlife-portrait img {
+    height: 220px !important;
+    object-position: center 28%;
+  }
+
+  .event-popup {
+    z-index: 120;
+    padding: 18px;
+    background: rgba(5, 11, 20, 0.72);
+  }
+
+  .event-card {
+    width: min(100%, 360px);
+    padding: 26px 20px 20px;
+    border-color: rgba(184, 149, 91, 0.42);
+    border-radius: 18px;
+    background: #0d1a2a;
+    color: var(--color-white);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+  }
+
+  .event-card::before {
+    opacity: 1;
+  }
+
+  .event-card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .event-card h2 {
+    font-size: 24px !important;
+    color: var(--color-white);
+  }
+
+  .event-card p:not(.eyebrow) {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 14px;
+  }
+
+  .event-close {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--color-white);
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+
+  .event-actions {
+    display: grid;
+    gap: 8px;
+  }
+
+  .mobile-quick-nav {
+    position: fixed;
+    left: 20px;
+    right: 20px;
+    bottom: calc(70px + env(safe-area-inset-bottom));
+    z-index: 88;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px;
+    padding: 6px;
+    border: 1px solid rgba(229, 225, 216, 0.34);
+    border-radius: 16px;
+    background: rgba(13, 26, 42, 0.9);
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(14px);
+  }
+
+  .mobile-quick-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    border-radius: 11px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  .mobile-quick-nav a:active {
+    background: rgba(184, 149, 91, 0.2);
+    color: var(--color-gold);
+  }
+}
+
+@media (max-width: 420px) {
+  .casino-card-body {
+    padding: 11px !important;
+  }
+
+  .casino-card h3,
+  .compact-mobility-grid h3 {
+    font-size: 13px;
+  }
+
+  .casino-card p,
+  .compact-mobility-grid p {
+    font-size: 11px;
+  }
 }

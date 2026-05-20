@@ -1,4 +1,4 @@
-(() => {
+﻿(() => {
   const header = document.querySelector("[data-header]");
   const navToggle = document.querySelector("[data-nav-toggle]");
   const nav = document.querySelector("[data-nav]");
@@ -181,6 +181,8 @@
   setupMobileDots(".city-photo-grid");
   setupMobileDots(".service-route-visual");
   setupMobileDots(".cinematic-grid");
+  setupMobileDots(".guide-board");
+  setupMobileDots(".city-food-grid");
 
   document.querySelectorAll("img").forEach((img) => {
     const markMissing = () => {
@@ -198,7 +200,7 @@
   const popup = document.querySelector("[data-event-popup]");
   const closePopup = document.querySelector("[data-popup-close]");
   const hideDayButton = document.querySelector("[data-popup-hide-day]");
-  const popupStorageKey = "danangEventPopupHiddenUntil";
+  const popupStorageKey = "danangEventPopupHiddenUntilV2";
 
   const hidePopup = () => {
     if (!popup) return;
@@ -212,7 +214,7 @@
       window.setTimeout(() => {
         popup.classList.add("is-visible");
         popup.setAttribute("aria-hidden", "false");
-      }, 650);
+      }, 350);
     }
 
     closePopup?.addEventListener("click", hidePopup);
@@ -227,9 +229,9 @@
 
   const visitorNodes = document.querySelectorAll("[data-visitor-count]");
   if (visitorNodes.length) {
-    // 조회수 시작값 수정 위치
+    // 議고쉶???쒖옉媛??섏젙 ?꾩튂
     const baseVisitors = 18420;
-    // 하루 증가 단위 수정 위치
+    // ?섎（ 利앷? ?⑥쐞 ?섏젙 ?꾩튂
     const visitorsPerDay = 100;
     const baseDate = new Date("2026-05-01T00:00:00+09:00");
     const today = new Date();
@@ -286,5 +288,18 @@
     });
   } else {
     revealItems.forEach((item) => item.classList.add("is-visible"));
+  }
+
+  if (!document.querySelector(".mobile-quick-nav")) {
+    const quickNav = document.createElement("nav");
+    quickNav.className = "mobile-quick-nav";
+    quickNav.setAttribute("aria-label", "모바일 빠른 메뉴");
+    quickNav.innerHTML = `
+      <a href="/crown/index.html"><span>홈</span></a>
+      <a href="/crown/hoiana.html"><span>카지노</span></a>
+      <a href="/crown/services/index.html"><span>서비스</span></a>
+      <a href="#contact"><span>문의</span></a>
+    `;
+    document.body.appendChild(quickNav);
   }
 })();

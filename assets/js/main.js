@@ -175,6 +175,25 @@
   setupMobileDots(".city-best-grid");
   setupMobileDots(".city-route-panels");
   setupMobileDots(".mobility-service-grid");
+  setupMobileDots(".review-grid");
+  setupMobileDots(".service-grid");
+  setupMobileDots(".course-showcase");
+  setupMobileDots(".city-photo-grid");
+  setupMobileDots(".service-route-visual");
+  setupMobileDots(".cinematic-grid");
+
+  document.querySelectorAll("img").forEach((img) => {
+    const markMissing = () => {
+      img.classList.add("is-broken");
+      const holder = img.closest("article, figure, .editorial-image, .sub-hero-bg, .hero-slide, .image-cta");
+      holder?.classList.add("image-missing");
+    };
+    if (img.complete && img.naturalWidth === 0) {
+      markMissing();
+    } else {
+      img.addEventListener("error", markMissing, { once: true });
+    }
+  });
 
   const popup = document.querySelector("[data-event-popup]");
   const closePopup = document.querySelector("[data-popup-close]");

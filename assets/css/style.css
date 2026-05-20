@@ -1629,6 +1629,383 @@ h3 {
   }
 }
 
+@media (max-width: 768px) {
+  body {
+    padding-bottom: calc(112px + env(safe-area-inset-bottom)) !important;
+  }
+
+  h1 {
+    font-size: 32px !important;
+    line-height: 1.12 !important;
+  }
+
+  h2 {
+    font-size: 26px !important;
+    line-height: 1.18 !important;
+  }
+
+  .hero,
+  .sub-hero {
+    min-height: 500px !important;
+  }
+
+  .casino-card img,
+  .service-card img,
+  .editorial-image img,
+  .visit-flow-balanced .editorial-image img,
+  .route-feature-card img,
+  .resort-list img,
+  .rich-courses img,
+  .city-route-panels img,
+  .mobility-service-grid img,
+  .city-photo-grid img {
+    height: 200px !important;
+    object-fit: cover !important;
+  }
+
+  .comparison-table {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-row {
+    min-width: 560px !important;
+    grid-template-columns: 0.75fr 0.65fr 0.8fr 1.35fr !important;
+  }
+
+  .table-row span:last-child {
+    grid-column: auto !important;
+  }
+
+  .review-grid,
+  .review-grid.compact,
+  .service-grid,
+  .course-showcase,
+  .city-photo-grid,
+  .service-route-visual {
+    display: flex !important;
+    grid-template-columns: none !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+  }
+
+  .floating-contact {
+    left: 20px !important;
+    right: 20px !important;
+    bottom: calc(12px + env(safe-area-inset-bottom)) !important;
+  }
+
+  .floating-contact a {
+    min-height: 50px !important;
+  }
+}
+
+/* Mobile stabilization pass: keep desktop layouts intact and compact dense sections below 768px. */
+section,
+[id] {
+  scroll-margin-top: 88px;
+}
+
+.image-missing {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(15, 31, 50, 0.96), rgba(184, 140, 62, 0.26));
+}
+
+.image-missing::before {
+  content: "Danang Concierge";
+  position: absolute;
+  inset: auto 16px 16px;
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+img.is-broken {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-space: 48px;
+  }
+
+  body {
+    padding-bottom: calc(112px + env(safe-area-inset-bottom));
+  }
+
+  .site-header {
+    height: 62px;
+    padding-inline: 16px;
+  }
+
+  .site-nav {
+    top: 62px;
+  }
+
+  section,
+  [id] {
+    scroll-margin-top: 82px;
+  }
+
+  .hero,
+  .sub-hero {
+    min-height: 500px;
+  }
+
+  .hero-content,
+  .sub-hero-content {
+    padding-bottom: 58px;
+  }
+
+  h1 {
+    font-size: 32px;
+    line-height: 1.12;
+  }
+
+  h2 {
+    font-size: 26px;
+    line-height: 1.18;
+  }
+
+  h3 {
+    font-size: 18px;
+    line-height: 1.25;
+  }
+
+  p,
+  .editorial-list,
+  .faq-answer,
+  .info-table,
+  .table-row,
+  .review-card p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .section-heading {
+    margin-bottom: 20px;
+  }
+
+  .section-heading p {
+    font-size: 14px;
+  }
+
+  .editorial-split,
+  .split-layout,
+  .info-table-layout {
+    gap: 22px;
+  }
+
+  .cta-panel,
+  .vip-panel,
+  .casino-card,
+  .service-card,
+  .review-card,
+  .feature-grid article,
+  .info-grid article,
+  .route-grid article,
+  .premium-info-grid article,
+  .game-card-grid article,
+  .beginner-game-list article,
+  .faq-item {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .casino-grid,
+  .premium-info-grid,
+  .beginner-game-list,
+  .stat-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px;
+  }
+
+  .stat-row span {
+    min-height: 74px;
+  }
+
+  .casino-card img,
+  .service-card img,
+  .editorial-image img,
+  .visit-flow-balanced .editorial-image img,
+  .route-feature-card img,
+  .resort-list img,
+  .rich-courses img,
+  .city-route-panels img,
+  .mobility-service-grid img {
+    height: 200px !important;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .game-card-grid,
+  .game-card-grid.compact-mobile {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .game-card-grid article {
+    padding: 0 !important;
+    overflow: hidden;
+  }
+
+  .game-card-grid img {
+    height: 108px !important;
+    border-radius: 0;
+  }
+
+  .game-card-grid h3 {
+    font-size: 15px !important;
+  }
+
+  .game-card-grid p {
+    font-size: 12px !important;
+  }
+
+  .comparison-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-row {
+    min-width: 560px;
+    grid-template-columns: 0.75fr 0.65fr 0.8fr 1.35fr !important;
+    padding: 12px 14px;
+  }
+
+  .table-row span:last-child {
+    grid-column: auto !important;
+  }
+
+  .review-grid,
+  .review-grid.compact,
+  .service-grid,
+  .course-showcase,
+  .city-photo-grid,
+  .service-route-visual {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 2px 14px 8px;
+    margin-inline: -14px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .review-grid::-webkit-scrollbar,
+  .service-grid::-webkit-scrollbar,
+  .course-showcase::-webkit-scrollbar,
+  .city-photo-grid::-webkit-scrollbar,
+  .service-route-visual::-webkit-scrollbar {
+    display: none;
+  }
+
+  .review-card,
+  .review-grid.compact .review-card,
+  .service-card,
+  .service-card:nth-child(4),
+  .service-card:nth-child(5),
+  .course-showcase article,
+  .city-photo-grid figure,
+  .route-feature-card {
+    flex: 0 0 78%;
+    grid-column: auto !important;
+    scroll-snap-align: start;
+  }
+
+  .review-card p {
+    min-height: 0;
+  }
+
+  .service-card img,
+  .course-showcase img,
+  .city-photo-grid img {
+    height: 170px !important;
+  }
+
+  .city-best-card,
+  .city-best-card.featured,
+  .city-best-card:not(.featured) {
+    min-height: 240px !important;
+  }
+
+  .city-best-card div,
+  .city-route-panels div {
+    padding: 16px !important;
+  }
+
+  .cinematic-grid.balanced figure,
+  .cinematic-grid.balanced figure:first-child,
+  .cinematic-grid figure,
+  .cinematic-grid figure:first-child {
+    flex-basis: 76%;
+    min-height: 210px !important;
+  }
+
+  .city-photo-grid figure {
+    min-height: 210px !important;
+  }
+
+  .image-cta {
+    min-height: 420px;
+  }
+
+  .image-cta .cta-panel {
+    padding: 24px 18px;
+  }
+
+  .cta-panel h2 {
+    font-size: 25px;
+  }
+
+  .cta-actions {
+    gap: 10px;
+  }
+
+  .button {
+    min-height: 46px;
+    padding: 13px 16px;
+  }
+
+  .floating-contact {
+    left: 20px !important;
+    right: 20px !important;
+    bottom: calc(12px + env(safe-area-inset-bottom)) !important;
+    gap: 8px;
+    z-index: 90;
+  }
+
+  .floating-contact a {
+    min-height: 50px !important;
+    min-width: 0 !important;
+    width: 100%;
+    border-radius: 12px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 420px) {
+  .review-card,
+  .service-card,
+  .course-showcase article,
+  .city-photo-grid figure,
+  .route-feature-card {
+    flex-basis: 84%;
+  }
+
+  .casino-grid,
+  .premium-info-grid,
+  .beginner-game-list,
+  .stat-row {
+    gap: 8px;
+  }
+}
+
 /* Final mobile safeguards for premium UX */
 @media (max-width: 768px) {
   .service-directory,
@@ -3220,4 +3597,20 @@ h3 {
   .compact-timeline article {
     grid-template-columns: 1fr;
   }
+}
+
+
+/* Final mobile overrides: this block intentionally sits last. */
+@media (max-width: 768px) {
+  body { padding-bottom: calc(112px + env(safe-area-inset-bottom)) !important; }
+  h1 { font-size: 32px !important; line-height: 1.12 !important; }
+  h2 { font-size: 26px !important; line-height: 1.18 !important; }
+  .hero, .sub-hero { min-height: 500px !important; }
+  .casino-card img, .service-card img, .editorial-image img, .visit-flow-balanced .editorial-image img, .route-feature-card img, .resort-list img, .rich-courses img, .city-route-panels img, .mobility-service-grid img, .city-photo-grid img { height: 200px !important; object-fit: cover !important; }
+  .comparison-table { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+  .table-row { min-width: 560px !important; grid-template-columns: 0.75fr 0.65fr 0.8fr 1.35fr !important; }
+  .table-row span:last-child { grid-column: auto !important; }
+  .review-grid, .review-grid.compact, .service-grid, .course-showcase, .city-photo-grid, .service-route-visual { display: flex !important; grid-template-columns: none !important; overflow-x: auto !important; scroll-snap-type: x mandatory; }
+  .floating-contact { left: 20px !important; right: 20px !important; bottom: calc(12px + env(safe-area-inset-bottom)) !important; }
+  .floating-contact a { min-height: 50px !important; }
 }

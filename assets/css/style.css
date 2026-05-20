@@ -5090,3 +5090,205 @@ img.is-broken {
     font-size: 12px !important;
   }
 }
+
+/* Final mobile compact corrections */
+@media (max-width: 768px) {
+  .hero.hero-home {
+    min-height: 600px !important;
+    height: 76svh !important;
+    max-height: 680px !important;
+    overflow: hidden !important;
+  }
+
+  .hero-home .hero-slider,
+  .hero-home .hero-slide {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100vw !important;
+    max-width: none !important;
+  }
+
+  .hero-home .hero-slide img {
+    width: 100vw !important;
+    min-width: 100vw !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  .hero-home .hero-content {
+    min-height: 100% !important;
+    padding: 70px 20px 78px !important;
+    justify-content: center !important;
+  }
+
+  .hero-home .hero-content .eyebrow {
+    max-width: 100%;
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+  }
+
+  .hero-home h1 {
+    max-width: 8.6em !important;
+    margin: 12px 0 14px !important;
+    font-size: clamp(32px, 8.6vw, 40px) !important;
+    line-height: 1.12 !important;
+  }
+
+  .hero-home .hero-description {
+    max-width: 92% !important;
+    font-size: 13px !important;
+    line-height: 1.58 !important;
+  }
+
+  .hero-home .hero-actions {
+    margin-top: 18px !important;
+  }
+
+  .hero-home .hero-actions .button {
+    min-height: 42px !important;
+    font-size: 12px !important;
+  }
+
+  .hero-home .hero-controls {
+    bottom: 28px !important;
+    left: 20px !important;
+  }
+
+  .hero-home .hero-controls button {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .square-marquee-track {
+    animation-duration: 170s !important;
+  }
+
+  .visit-flow-balanced {
+    gap: 10px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .visit-flow-balanced .editorial-copy .eyebrow {
+    align-self: flex-start !important;
+    margin: 0 0 2px !important;
+    font-size: 11px !important;
+  }
+
+  .visit-flow-balanced .editorial-copy h2 {
+    max-width: 8.8em !important;
+    margin: 0 !important;
+    font-size: clamp(28px, 7.3vw, 32px) !important;
+    line-height: 1.17 !important;
+  }
+
+  .visit-flow-balanced .editorial-copy p:not(.eyebrow) {
+    margin-top: 2px !important;
+    font-size: 13px !important;
+    line-height: 1.58 !important;
+    color: rgba(255, 255, 255, 0.72) !important;
+  }
+
+  .visit-flow-balanced .editorial-image {
+    margin-top: 10px !important;
+  }
+
+  .visit-flow-balanced .editorial-image img {
+    height: 176px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+  }
+
+  .visit-flow-balanced .timeline-cards {
+    width: 100% !important;
+    max-width: 360px !important;
+    margin: 10px auto 0 !important;
+    gap: 9px !important;
+  }
+
+  .visit-flow-balanced .timeline-cards span {
+    min-height: 38px !important;
+    padding: 8px 6px !important;
+    border-radius: 13px !important;
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+  }
+
+  .course-showcase.golf-course-strip {
+    padding-top: 10px !important;
+    padding-bottom: 18px !important;
+    scroll-padding-left: 20px !important;
+  }
+
+  .course-showcase.golf-course-strip article {
+    padding: 18px !important;
+    gap: 0 !important;
+  }
+
+  .course-showcase.golf-course-strip img {
+    margin-bottom: 16px !important;
+  }
+
+  .course-showcase.golf-course-strip h3 {
+    margin: 0 0 9px !important;
+    font-size: 21px !important;
+    line-height: 1.22 !important;
+  }
+
+  .course-showcase.golf-course-strip p {
+    margin: 0 0 11px !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+
+  .course-showcase.golf-course-strip small {
+    margin-bottom: 14px !important;
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+  }
+
+  .course-showcase.golf-course-strip span {
+    margin-top: auto !important;
+  }
+
+  .service-directory {
+    gap: 12px !important;
+    padding: 16px 22px 18px !important;
+    margin-inline: -20px !important;
+    scroll-padding-left: 22px !important;
+    align-items: stretch !important;
+  }
+
+  .service-group {
+    flex-basis: 78% !important;
+    padding: 16px !important;
+    border-radius: 18px !important;
+  }
+
+  .service-group h3 {
+    margin-bottom: 12px !important;
+    font-size: 20px !important;
+  }
+
+  .service-group a {
+    min-height: 54px !important;
+    padding: 10px 30px 10px 0 !important;
+  }
+
+  .service-group span {
+    font-size: 15px !important;
+  }
+
+  .service-group small {
+    font-size: 11px !important;
+  }
+
+  .section-heading p:not(.eyebrow),
+  .editorial-copy p:not(.eyebrow),
+  .sub-hero-content p {
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+  }
+}

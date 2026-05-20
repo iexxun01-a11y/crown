@@ -415,6 +415,41 @@ h3 {
 .section-heading.align-left h2 {
   color: var(--color-white);
 }
+/* 가장 인기 있는 게임 섹션 */
+.game-card-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.game-card-grid article {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.game-card-grid article span {
+  display: block;
+  color: rgba(217, 166, 87, 0.78);
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  opacity: 1;
+}
+
+.game-card-grid article h3 {
+  color: #eaf0f5;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  opacity: 1;
+}
+
+.game-card-grid article p {
+  color: rgba(234, 240, 245, 0.75);
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0;
+  opacity: 1;
+}
 
 .casino-grid {
   display: grid;

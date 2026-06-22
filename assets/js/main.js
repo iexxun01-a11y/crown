@@ -296,9 +296,9 @@
     quickNav.className = "mobile-quick-nav";
     quickNav.setAttribute("aria-label", "모바일 빠른 메뉴");
     quickNav.innerHTML = `
-      <a href="/crown/index.html"><span>홈</span></a>
+      <a href="/index.html"><span>홈</span></a>
       <button type="button" data-casino-sheet-open><span>카지노</span></button>
-      <a href="/crown/services/index.html"><span>서비스</span></a>
+      <a href="/services/index.html"><span>서비스</span></a>
       <a href="#contact"><span>문의</span></a>
     `;
     document.body.appendChild(quickNav);
@@ -314,8 +314,8 @@
         <button class="casino-sheet-close" type="button" aria-label="닫기" data-casino-sheet-close>×</button>
         <p>Casino Route</p>
         <h2>방문할 카지노를 선택하세요</h2>
-        <a href="/crown/crown.html"><strong>크라운 카지노</strong><span>시내 일정과 가볍게 연결</span></a>
-        <a href="/crown/hoiana.html"><strong>호이아나 카지노</strong><span>리조트·골프·VIP 동선 추천</span></a>
+        <a href="/crown.html"><strong>크라운 카지노</strong><span>시내 일정과 가볍게 연결</span></a>
+        <a href="/hoiana.html"><strong>호이아나 카지노</strong><span>리조트·골프·VIP 동선 추천</span></a>
       </div>
     `;
     document.body.appendChild(sheet);
